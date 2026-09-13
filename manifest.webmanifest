@@ -1,0 +1,17 @@
+{
+  "name": "Property India — Buy, Rent & Sell",
+  "short_name": "Property India",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1264f5",
+  "description": "भारत में Property खरीदें, किराए पर लें और बेचें।",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
