@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hi">
+  <link rel="manifest" href="./manifest.webmanifest">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,6 +150,14 @@ window.scrollToSell=()=>{closeModal('profileModal');setTimeout(()=>document.getE
 onAuthStateChanged(auth,async u=>{window.currentUser=u;document.getElementById('headerUser').textContent=u?(u.displayName||u.email?.split('@')[0]||'Account'):'Login';document.getElementById('loginNote').style.display=u?'none':'block';renderProfile();updateAdminVisibility();loadBuyerRequirement();await loadFirebaseFavorites();await loadNotifications();});
 loadRemote();
 </script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("Property India app ready"))
+      .catch(err => console.log("Service Worker error:", err));
+  });
+}
+</script>
 </body>
 </html>
